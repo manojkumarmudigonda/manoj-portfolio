@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manoj Kumar Mudigonda — Operations & AI Automation</title>
+<meta name="description" content="Operations Professional specializing in Generative AI, AI Agents & Automation. 8+ years driving process efficiency and workflow optimization at Amazon." />
+
+<!-- Open Graph / LinkedIn -->
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Manoj Kumar Mudigonda — Operations & AI Automation Portfolio" />
+<meta property="og:description" content="8+ years of Operations excellence. Generative AI, AI Agents & Automation. Currently at Amazon." />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0a0a0f;
+    --bg-soft: #12121a;
+    --surface: #18181f;
+    --border: rgba(255, 255, 255, 0.08);
+    --text: #eaeaf0;
+    --text-dim: #9a9aa8;
+    --text-mute: #6a6a78;
+    --accent: #d4a547;
+    --accent-2: #f4c76a;
+    --accent-glow: rgba(212, 165, 71, 0.35);
+    --gradient: linear-gradient(135deg, #d4a547 0%, #f4c76a 50%, #e8b85c 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(212,165,71,0.12) 0%, rgba(244,199,106,0.04) 100%);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Noise overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 0;
+  }
+
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: float 20s ease-in-out infinite;
+    z-index: 0;
+  }
+  .blob-1 { width: 520px; height: 520px; background: radial-gradient(circle, #d4a547 0%, transparent 70%); top: -120px; right: -100px; }
+  .blob-2 { width: 420px; height: 420px; background: radial-gradient(circle, #5b4bd1 0%, transparent 70%); bottom: -100px; left: -100px; animation-delay: -10s; opacity: 0.25; }
+  .blob-3 { width: 300px; height: 300px; background: radial-gradient(circle, #e8b85c 0%, transparent 70%); top: 40%; left: 30%; animation-delay: -5s; opacity: 0.2; }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(40px, -60px) scale(1.08); }
+    66% { transform: translate(-30px, 40px) scale(0.94); }
+  }
+
+  .hero-inner { position: relative; z-index: 2; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(212, 165, 71, 0.3);
+    border-radius: 100px;
+    background: rgba(212, 165, 71, 0.06);
+    backdrop-filter: blur(10px);
+    margin-bottom: 2rem;
+    animation: fadeUp 0.9s ease 0.1s backwards;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 5.8rem);
+    font-weight: 600;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 1s ease 0.2s backwards;
+  }
+  .hero h1 .accent {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    color: var(--text-dim);
+    max-width: 720px;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    animation: fadeUp 1s ease 0.35s backwards;
+  }
+  .hero-tagline strong { color: var(--text); font-weight: 500; }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-mute);
+    font-family: 'JetBrains Mono', monospace;
+    animation: fadeUp 1s ease 0.5s backwards;
+  }
+  .hero-meta span { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .hero-meta .dot { width: 4px; height: 4px; background: var(--accent); border-radius: 50%; }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    animation: fadeUp 1s ease 0.7s backwards;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+    animation: scrollPulse 2.5s ease-in-out infinite;
+  }
+  @keyframes scrollPulse {
+    0%, 100% { transform: translateY(-8px); opacity: 0.3; }
+    50% { transform: translateY(8px); opacity: 1; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 7rem 0; position: relative; }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .section-label::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;
+    line-height: 1.1;
+  }
+  .section-title em {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 400;
+  }
+
+  /* ===== ABOUT ===== */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-side .section-label { margin-bottom: 1.5rem; }
+  .about-side h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; }
+  .about-side h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
+
+  .about-body p {
+    color: var(--text-dim);
+    font-size: 1.02rem;
+    margin-bottom: 1.4rem;
+    font-weight: 300;
+  }
+  .about-body p:last-child { margin-bottom: 0; }
+  .about-body strong { color: var(--text); font-weight: 500; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-mute);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ===== EXPERIENCE / TIMELINE ===== */
+  .timeline { position: relative; padding-left: 2.5rem; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    bottom: 12px;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--accent) 10%, var(--accent) 90%, transparent);
+    opacity: 0.5;
+  }
+
+  .company-block { margin-bottom: 4rem; position: relative; }
+  .company-block:last-child { margin-bottom: 0; }
+
+  .company-header {
+    position: relative;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .company-header::before {
+    content: '';
+    position: absolute;
+    left: -2.9rem;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    box-shadow: 0 0 0 4px var(--bg), 0 0 20px var(--accent-glow);
+  }
+  .company-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+  .company-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-mute);
+    letter-spacing: 0.05em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
+  }
+  .company-meta .sep { color: var(--accent); opacity: 0.5; }
+
+  .role {
+    padding: 1.8rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 1.2rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .role::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--gradient);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .role:hover {
+    transform: translateX(6px);
+    border-color: rgba(212, 165, 71, 0.25);
+    background: linear-gradient(180deg, rgba(212,165,71,0.04), rgba(255,255,255,0.005));
+  }
+  .role:hover::before { transform: scaleY(1); }
+
+  .role-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.01em;
+  }
+  .role-duration {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    background: rgba(212, 165, 71, 0.08);
+    border-radius: 4px;
+  }
+  .role ul { list-style: none; }
+  .role ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    color: var(--text-dim);
+    font-size: 0.96rem;
+    margin-bottom: 0.7rem;
+    font-weight: 300;
+    line-height: 1.65;
+  }
+  .role ul li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0.75em;
+    width: 6px; height: 1px;
+    background: var(--accent);
+  }
+  .role ul li:last-child { margin-bottom: 0; }
+
+  /* ===== SKILLS ===== */
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .skill-pill {
+    padding: 0.75rem 1.4rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: var(--text-dim);
+    backdrop-filter: blur(10px);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .skill-pill::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    z-index: -1;
+  }
+  .skill-pill:hover {
+    color: var(--bg);
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px -10px var(--accent-glow);
+  }
+  .skill-pill:hover::before { opacity: 1; }
+
+  /* ===== EDUCATION ===== */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .edu-card {
+    padding: 2.2rem;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .edu-card::after {
+    content: '';
+    position: absolute;
+    top: -50%; right: -50%;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .edu-card:hover {
+    border-color: rgba(212, 165, 71, 0.25);
+    transform: translateY(-4px);
+  }
+  .edu-card:hover::after { opacity: 0.4; }
+
+  .edu-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.8rem;
+  }
+  .edu-degree {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  .edu-school {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    font-weight: 300;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .contact-card {
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    backdrop-filter: blur(20px);
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+  }
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-soft);
+    opacity: 0;
+    transition: opacity 0.45s ease;
+  }
+  .contact-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212, 165, 71, 0.4);
+    box-shadow: 0 20px 50px -15px var(--accent-glow);
+  }
+  .contact-card:hover::before { opacity: 1; }
+
+  .contact-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(212, 165, 71, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 1;
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .contact-card:hover .contact-icon {
+    background: var(--accent);
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .contact-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-mute);
+    margin-bottom: 0.6rem;
+    position: relative;
+    z-index: 1;
+  }
+  .contact-value {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    word-break: break-word;
+  }
+  .contact-card:hover .contact-value {
+    color: var(--accent-2);
+  }
+
+  .contact-cta {
+    text-align: center;
+    margin-top: 3.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+  }
+  .contact-cta p {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 4rem 0 3rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .footer-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-mute);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ===== REVEAL ANIMATIONS ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 860px) {
+    .container { padding: 0 1.5rem; }
+    section { padding: 5rem 0; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat-num { font-size: 2.1rem; }
+    .hero { padding: 5rem 0 6rem; }
+    .hero-meta { gap: 1rem; font-size: 0.78rem; }
+    .timeline { padding-left: 1.8rem; }
+    .company-header::before { left: -2.2rem; width: 12px; height: 12px; }
+    .role { padding: 1.4rem; }
+    .blob-1, .blob-2 { width: 320px; height: 320px; }
+    .scroll-indicator { display: none; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 2.6rem; }
+    .section-title { font-size: 1.8rem; }
+    .company-name { font-size: 1.5rem; }
+    .contact-card { padding: 2rem; }
+    .contact-value { font-size: 1rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    .blob { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-eyebrow">Portfolio / 2026</div>
+    <h1>Manoj Kumar <br/><span class="accent">Mudigonda</span></h1>
+    <p class="hero-tagline">
+      Operations Professional crafting <strong>Generative AI</strong>, <strong>AI Agents</strong> &amp; <strong>Automation</strong> solutions that drive process efficiency and workflow optimization at scale.
+    </p>
+    <div class="hero-meta">
+      <span><span class="dot"></span>Amazon · ex-Cognizant</span>
+      <span><span class="dot"></span>Hyderabad, India</span>
+      <span><span class="dot"></span>8+ Years Experience</span>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-side reveal">
+        <div class="section-label">01 · About</div>
+        <h2>A decade of <em>operational excellence</em>, reimagined with AI.</h2>
+      </div>
+      <div class="about-body reveal">
+        <p>Operations professional with <strong>8+ years of experience</strong> across logistics workflows, seller investigations, and enrollment &amp; billing operations, with a strong focus on applying <strong>Generative AI and automation</strong> to drive operational efficiency and process optimization.</p>
+        <p>At <strong>Amazon</strong>, I currently work in accessorials and logistics billing operations, managing high-volume workflows with a focus on accuracy, efficiency, and resolution of discrepancies. I contribute to improving process performance by identifying gaps, resolving operational issues, and ensuring smooth execution of billing-related activities in a fast-paced environment.</p>
+        <p>Prior to this, I worked on seller investigations, where I handled complex cases, performed root cause analysis, and resolved escalations impacting operational performance and workflow stability. Before Amazon, at <strong>Cognizant</strong>, I progressed from Process Executive to Senior Process Executive, managing high-volume transactions while ensuring data accuracy, compliance, and process consistency.</p>
+        <p>Alongside my core operations work, I actively leverage <strong>Generative AI</strong> to automate repetitive tasks, build internal tools, and streamline workflows — reducing manual effort, improving turnaround time, and enhancing operational efficiency across high-volume processes.</p>
+
+        <div class="stats">
+          <div>
+            <div class="stat-num">8+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div>
+            <div class="stat-num">3</div>
+            <div class="stat-label">Global Companies</div>
+          </div>
+          <div>
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Workflows Automated</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">02 · Experience</div>
+      <h2 class="section-title">A journey through <em>scale &amp; systems</em>.</h2>
+    </div>
+
+    <div class="timeline">
+
+      <!-- AMAZON -->
+      <div class="company-block reveal">
+        <div class="company-header">
+          <div class="company-name">Amazon</div>
+          <div class="company-meta">
+            <span>Full-time</span><span class="sep">◆</span>
+            <span>1 yr 10 mos</span><span class="sep">◆</span>
+            <span>Hyderabad, India</span><span class="sep">◆</span>
+            <span>On-site</span>
+          </div>
+        </div>
+
+        <div class="role">
+          <div class="role-title">Operations Analyst — Accessorials &amp; Logistics Billing</div>
+          <div class="role-duration">JUN 2025 — PRESENT · 11 MOS</div>
+          <ul>
+            <li>Owned end-to-end accessorial and logistics billing operations for high-volume workflows, ensuring accuracy, compliance, and timely resolution while leveraging Generative AI to automate repetitive tasks and reduce manual effort.</li>
+            <li>Led resolution of critical billing escalations impacting cost and operational performance, using data analysis and AI-assisted insights to accelerate root cause identification and decision-making.</li>
+            <li>Drove process improvement and automation initiatives using Generative AI, enhancing efficiency, reducing defects, and optimizing turnaround time across operational workflows.</li>
+            <li>Partnered with cross-functional stakeholders to improve workflow efficiency and resolve systemic issues through data-driven and automation-led approaches.</li>
+            <li>Tracked and analyzed performance metrics to identify trends, leveraging AI-supported analysis to implement corrective actions and improve process performance.</li>
+            <li>Acted as a key resource for team support, knowledge sharing, and driving adoption of AI and automation solutions to improve team productivity and consistency.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-title">Investigation Specialist — Operations</div>
+          <div class="role-duration">JUL 2024 — JUN 2025 · 1 YR</div>
+          <ul>
+            <li>Owned investigation of seller-related operational issues, ensuring resolution within SLA and policy compliance.</li>
+            <li>Led root cause analysis to identify systemic gaps affecting seller performance and operational workflows.</li>
+            <li>Managed critical escalations impacting seller experience and platform operations.</li>
+            <li>Partnered with cross-functional stakeholders to resolve complex cases and improve process efficiency.</li>
+            <li>Analyzed trends and implemented corrective actions to reduce recurring defects.</li>
+            <li>Supported team members through knowledge sharing and process guidance.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SYNECTICS -->
+      <div class="company-block reveal">
+        <div class="company-header">
+          <div class="company-name">Synectics Inc.</div>
+          <div class="company-meta">
+            <span>Full-time</span><span class="sep">◆</span>
+            <span>6 mos</span><span class="sep">◆</span>
+            <span>Hyderabad, India</span><span class="sep">◆</span>
+            <span>On-site</span>
+          </div>
+        </div>
+
+        <div class="role">
+          <div class="role-title">Recruitment Specialist — Coordination</div>
+          <div class="role-duration">JAN 2024 — JUN 2024 · 6 MOS</div>
+          <ul>
+            <li>Coordinated end-to-end recruitment activities, supporting smooth candidate pipelines and stakeholder communications.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- COGNIZANT -->
+      <div class="company-block reveal">
+        <div class="company-header">
+          <div class="company-name">Cognizant</div>
+          <div class="company-meta">
+            <span>Full-time</span><span class="sep">◆</span>
+            <span>6 yrs 6 mos</span><span class="sep">◆</span>
+            <span>Hyderabad, India</span><span class="sep">◆</span>
+            <span>On-site</span>
+          </div>
+        </div>
+
+        <div class="role">
+          <div class="role-title">Senior Process Executive — Enrollment &amp; Billing Operations</div>
+          <div class="role-duration">OCT 2020 — JAN 2024 · 3 YRS 4 MOS</div>
+          <ul>
+            <li>Managed high-volume enrollment and billing operations, ensuring SLA adherence, accuracy, and compliance.</li>
+            <li>Handled complex cases and escalations, ensuring timely resolution and minimal business impact.</li>
+            <li>Drove process improvement initiatives to enhance efficiency and reduce defects.</li>
+            <li>Partnered with stakeholders to resolve operational challenges and streamline workflows.</li>
+            <li>Monitored performance metrics and implemented corrective actions to improve productivity.</li>
+          </ul>
+        </div>
+
+        <div class="role">
+          <div class="role-title">Process Executive</div>
+          <div class="role-duration">AUG 2017 — OCT 2020 · 3 YRS 3 MOS</div>
+          <ul>
+            <li>Processed enrollment and billing transactions as per defined workflows and guidelines.</li>
+            <li>Validated data to ensure accuracy and completeness of records.</li>
+            <li>Handled routine queries and supported issue resolution within SLA timelines.</li>
+            <li>Followed standard operating procedures (SOPs) to maintain process consistency.</li>
+            <li>Maintained quality standards and ensured compliance with process requirements.</li>
+            <li>Coordinated with internal teams for smooth processing of daily operations.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">03 · Expertise</div>
+      <h2 class="section-title">Crafting <em>efficiency</em>, one workflow at a time.</h2>
+    </div>
+    <div class="skills reveal">
+      <span class="skill-pill">Operations Management</span>
+      <span class="skill-pill">Generative AI</span>
+      <span class="skill-pill">AI Agents</span>
+      <span class="skill-pill">Automation</span>
+      <span class="skill-pill">Process Efficiency</span>
+      <span class="skill-pill">Workflow Optimization</span>
+      <span class="skill-pill">Enrollment &amp; Billing Operations</span>
+      <span class="skill-pill">Logistics Billing</span>
+      <span class="skill-pill">Investigation Management</span>
+      <span class="skill-pill">Root Cause Analysis</span>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">04 · Education</div>
+      <h2 class="section-title">Foundations in <em>finance &amp; commerce</em>.</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-year">2015 — 2017</div>
+        <div class="edu-degree">Master of Business Administration — MBA</div>
+        <div class="edu-school">Osmania University · Finance, General</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="edu-year">2012 — 2015</div>
+        <div class="edu-degree">Bachelor of Commerce — BCom</div>
+        <div class="edu-school">Osmania University</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">05 · Get in Touch</div>
+      <h2 class="section-title">Let's build something <em>exceptional</em> together.</h2>
+    </div>
+
+    <div class="contact-grid">
+      <a href="mailto:manojkumarmudigonda@gmail.com" class="contact-card reveal">
+        <div class="contact-icon">📧</div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">manojkumarmudigonda@gmail.com</div>
+      </a>
+
+      <a href="tel:+917036235135" class="contact-card reveal">
+        <div class="contact-icon">📱</div>
+        <div class="contact-label">Phone</div>
+        <div class="contact-value">+91 703 623 5135</div>
+      </a>
+    </div>
+
+    <div class="contact-cta reveal">
+      <p>Open to opportunities in operations management, process improvement, and AI-driven automation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<fo
+__CHUNK_END_b2c7b758-a955-4436-8569-f3f3b8bf4fa9_1_of_2____CHUNK_START_b2c7b758-a955-4436-8569-f3f3b8bf4fa9_2_of_2__
+oter>
+  <div class="container">
+    <div class="footer-name">Manoj Kumar Mudigonda</div>
+    <div class="footer-tag">Operations · Generative AI · Automation</div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal via IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
